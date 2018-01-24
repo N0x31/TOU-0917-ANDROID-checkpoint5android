@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WCSTravel</string>
+    <string name="search_a_flight">Search a flight</string>
+    <string name="departurecity">From</string>
+    <string name="departure_city">To</string>
+    <string name="departure_date">Departure Date</string>
+    <string name="destination_date">Return Date</string>
+    <string name="search_flights">Search flights</string>
+    <string name="your_travel">"Your travel : "</string>
+    <string name="your_departure_date">Departure :</string>
+    <string name="your_return_date">"Return : "</string>
+    <string name="dollar">$</string>
+    <string name="airline_name">"Airline : "</string>
+    <string name="toast_empty_form">Please fill all fields</string>
+</resources>
