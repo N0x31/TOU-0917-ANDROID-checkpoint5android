@@ -9,9 +9,24 @@
 
     <Button
         android:id="@+id/searchbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/search_flights" />
+        android:layout_marginBottom="40dp"
+        android:background="@color/orange"
+        android:padding="10dp"
+        android:text="@string/enter"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/wildLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="133dp"
+        app:srcCompat="@drawable/wildcodeschool_logo" />
 </RelativeLayout>

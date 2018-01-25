@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Boolean value = dataSnapshot.child("hasContent").getValue(Boolean.class);
                 String content = String.valueOf(value);
-                Toast.makeText(MainActivity.this, content, Toast.LENGTH_LONG).show();
+                /*Toast.makeText(MainActivity.this, content, Toast.LENGTH_SHORT).show();*/
             }
 
             @Override

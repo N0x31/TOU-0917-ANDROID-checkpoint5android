@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:context="fr.wcs.wcstravel.SearchActivity">
+
+    <ImageView
+        android:id="@+id/backgroundTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@color/orange" />
 
     <TextView
         android:id="@+id/searchflighttitle"
@@ -13,8 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="@string/search_a_flight"
+        android:layout_marginTop="30dp"
+        android:text="@string/search_title"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <LinearLayout
@@ -23,6 +33,8 @@
         android:layout_below="@+id/searchflighttitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal"
         android:id="@+id/layout_cities">
 
@@ -42,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="@string/departure_city"
+            android:hint="@string/destination_city"
             android:inputType="textPersonName" />
     </LinearLayout>
 
@@ -53,6 +65,8 @@
         android:layout_below="@+id/layout_cities"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
         <EditText
@@ -81,6 +95,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:background="@color/orange"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:padding="10dp"
         android:text="@string/search_a_flight" />
+
 
 </RelativeLayout>

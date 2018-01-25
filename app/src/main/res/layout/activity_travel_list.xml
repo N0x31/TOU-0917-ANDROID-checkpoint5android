@@ -21,6 +21,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="$/€" />
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/orange"
+        android:text="@string/devises"
+        android:textColor="#ffffff"
+        android:textSize="16dp" />
 
 </RelativeLayout>

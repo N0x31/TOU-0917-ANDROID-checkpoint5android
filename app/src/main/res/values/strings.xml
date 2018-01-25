@@ -2,7 +2,7 @@
     <string name="app_name">WCSTravel</string>
     <string name="search_a_flight">Rechercher un vol</string>
     <string name="departurecity">De</string>
-    <string name="departure_city">Vers</string>
+    <string name="destination_city">Vers</string>
     <string name="departure_date">Date de départ</string>
     <string name="destination_date">Date de retour</string>
     <string name="search_flights">Rechercher des vols</string>
@@ -13,4 +13,7 @@
     <string name="euros"> €</string>
     <string name="airline_name">Compagnie : </string>
     <string name="toast_empty_form">Veuillez remplir tous les champs</string>
+    <string name="devises">$/€</string>
+    <string name="search_title">Votre recherche</string>
+    <string name="enter">Entrer</string>
 </resources>
