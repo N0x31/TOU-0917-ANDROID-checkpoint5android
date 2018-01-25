@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +26,7 @@ public class TravelListActivity extends AppCompatActivity {
     private String travelDetails;
     private String returnDateAsked;
     private String departureDateAsked;
+    private RecyclerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,17 @@ public class TravelListActivity extends AppCompatActivity {
         returnDateAsked = getIntent().getStringExtra("datereturn");
         travelDetails = getIntent().getStringExtra("citydeparture")+"_"+getIntent().getStringExtra("citydestination");
 
+        mAdapter = new RecyclerAdapter(TravelListActivity.this, travelList);
+
         addTravel();
+
+        Button currencyButton = (Button) findViewById(R.id.currencyButton);
+        currencyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAdapter.changeCurrency();
+            }
+        });
 
     }
 
@@ -62,7 +75,7 @@ public class TravelListActivity extends AppCompatActivity {
 
                     final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_travel_list);
                     recyclerView.setLayoutManager(new LinearLayoutManager(TravelListActivity.this));
-                    recyclerView.setAdapter(new RecyclerAdapter(TravelListActivity.this, travelList));
+                    recyclerView.setAdapter(mAdapter);
                 }else {
                     Toast.makeText(TravelListActivity.this, "No matches", Toast.LENGTH_SHORT).show();
                 }

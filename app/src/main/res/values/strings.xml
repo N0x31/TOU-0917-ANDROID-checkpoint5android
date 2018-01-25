@@ -9,7 +9,8 @@
     <string name="your_travel">Votre voyage : </string>
     <string name="your_departure_date">Départ le : </string>
     <string name="your_return_date">Retour le : </string>
-    <string name="dollar"> $</string>
+    <string name="dollar">$ </string>
+    <string name="euros"> €</string>
     <string name="airline_name">Compagnie : </string>
     <string name="toast_empty_form">Veuillez remplir tous les champs</string>
 </resources>

@@ -8,13 +8,15 @@ public class TravelModel {
     String price;
     String return_date;
     String travel;
+    String currency = "USD";
 
-    public TravelModel(String airline, String departure_date, String price, String return_date, String travel) {
+    public TravelModel(String airline, String departure_date, String price, String return_date, String travel, String currency) {
         this.airline = airline;
         this.departure_date = departure_date;
         this.price = price;
         this.return_date = return_date;
         this.travel = travel;
+        this.currency = currency;
     }
 
     public TravelModel() {
@@ -58,5 +60,13 @@ public class TravelModel {
 
     public void setTravel(String travel) {
         this.travel = travel;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }

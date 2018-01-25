@@ -10,8 +10,17 @@
         android:id="@+id/recycler-travel-list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/currencyButton"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerVertical="true" />
 
-        />
+    <Button
+        android:id="@+id/currencyButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="$/€" />
+
 </RelativeLayout>

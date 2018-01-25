@@ -39,15 +39,40 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         holder.travelName.setText(mView.getContext().getString(R.string.your_travel)+item.getTravel());
         holder.departureDate.setText(mView.getContext().getString(R.string.your_departure_date)+item.getDeparture_date());
         holder.returnDate.setText(mView.getContext().getString(R.string.your_return_date)+item.getReturn_date());
-        holder.price.setText(item.getPrice()+mView.getContext().getString(R.string.dollar));
+        if (item.getCurrency().equals("USD")){
+            holder.price.setText(mView.getContext().getString(R.string.dollar)+item.getPrice());
+        }else
+        {
+            holder.price.setText(item.getPrice()+mView.getContext().getString(R.string.euros));
+        }
         holder.airline.setText(mView.getContext().getString(R.string.airline_name)+item.getAirline());
 
-        mView.setOnClickListener(new View.OnClickListener() {
+        /*mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
-        });
+        });*/
+    }
+
+    public void changeCurrency(){
+
+        for (TravelModel travelModel : items) {
+            items.remove(travelModel);
+            items.add(convertPrice(travelModel));
+        }
+        notifyDataSetChanged();
+    }
+
+    private TravelModel convertPrice(TravelModel newTravelModel) {
+        if (newTravelModel.getCurrency().equals("EUR")){
+            newTravelModel.setPrice(String.valueOf(Math.floor((Double.parseDouble(newTravelModel.getPrice()) / 0.805581066)*100)/100));
+            newTravelModel.setCurrency("USD");
+        }else {
+            newTravelModel.setPrice(String.valueOf(Math.floor((Double.parseDouble(newTravelModel.getPrice()) * 0.805581066)*100)/100));
+            newTravelModel.setCurrency("EUR");
+        }
+        return newTravelModel;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
