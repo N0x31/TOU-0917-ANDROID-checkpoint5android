@@ -1,8 +1,11 @@
 package fr.wcs.wcstravel;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -25,20 +28,28 @@ public class MainActivity extends AppCompatActivity {
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
-
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 Boolean value = dataSnapshot.child("hasContent").getValue(Boolean.class);
                 String content = String.valueOf(value);
-                Toast.makeText(MainActivity.this, content, Toast.LENGTH_LONG).show();
+                /*Toast.makeText(MainActivity.this, content, Toast.LENGTH_SHORT).show();*/
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        Button searchButton = (Button)findViewById(R.id.searchbutton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
             }
         });
     }
